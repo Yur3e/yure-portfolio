@@ -24,25 +24,10 @@ export const siteContent = {
     },
     hero: {
       available: "Disponível para oportunidades",
-      kicker: "portfolio_status: online",
       lead:
         "Interfaces com presença, lógica organizada e projetos onde visual e dados conversam de verdade.",
-      sheetTitle: "Resumo profissional",
-      metrics: {
-        projects: "projetos ativos",
-        experience: "experiências",
-        stack: "tecnologias",
-        languages: "idiomas"
-      },
-      pillarsLabel: "Pilares da proposta de valor",
-      pillars: [
-        "Frontend com identidade e sensação de sistema vivo.",
-        "Backends pensados para manutenção, clareza e evolução.",
-        "Projetos orientados a dados, métricas e leitura de contexto."
-      ],
       linkedin: "LinkedIn",
-      experienceButton: "Experiência",
-      locationLabel: "base: joao_pessoa_brazil"
+      experienceButton: "Experiência"
     },
     about: {
       eyebrow: "Sobre mim",
@@ -118,14 +103,6 @@ export const siteContent = {
       repo: "Repositório"
     },
     projects: [
-      {
-        title: "Organizador de Filmes",
-        description:
-          "Aplicação para PC, web e mobile para organizar filmes, favoritar títulos e marcar assistidos, com foco em experiência do usuário e boa estrutura de dados.",
-        tech: ["React", "Node.js", "SQLite", "API REST"],
-        demo: "#",
-        repo: "#"
-      },
       {
         title: "Portfólio Pessoal",
         description:
@@ -257,25 +234,10 @@ export const siteContent = {
     },
     hero: {
       available: "Open to opportunities",
-      kicker: "portfolio_status: online",
       lead:
         "Interfaces with presence, organized logic, and projects where visuals and data genuinely reinforce each other.",
-      sheetTitle: "Professional summary",
-      metrics: {
-        projects: "active projects",
-        experience: "experiences",
-        stack: "technologies",
-        languages: "languages"
-      },
-      pillarsLabel: "Value pillars",
-      pillars: [
-        "Frontend work with identity and the feeling of a living system.",
-        "Backends designed for maintenance, clarity, and long-term growth.",
-        "Data-oriented projects shaped by metrics, structure, and context."
-      ],
       linkedin: "LinkedIn",
-      experienceButton: "Experience",
-      locationLabel: "base: joao_pessoa_brazil"
+      experienceButton: "Experience"
     },
     about: {
       eyebrow: "About me",
@@ -351,14 +313,6 @@ export const siteContent = {
       repo: "Repository"
     },
     projects: [
-      {
-        title: "Movie Organizer",
-        description:
-          "An application for desktop, web, and mobile to organize movies, favorite titles, and mark watched content, with a focus on user experience and solid data structure.",
-        tech: ["React", "Node.js", "SQLite", "REST API"],
-        demo: "#",
-        repo: "#"
-      },
       {
         title: "Personal Portfolio",
         description:
