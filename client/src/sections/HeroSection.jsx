@@ -17,12 +17,10 @@ export default function HeroSection() {
           <div className="hero-content">
             <div className="hero-copy">
               <h1 className="hero-title">
-                <span>Building</span>
-                <span className="hero-title-accent">resilient software.</span>
+                <span>{hero.titleLineOne}</span>
+                <span className="hero-title-accent">{hero.titleLineTwo}</span>
               </h1>
-              <p className="hero-role">{profile.title}</p>
-              <p className="hero-text hero-text-lead">{hero.lead}</p>
-              <p className="hero-text">{profile.subtitle}</p>
+              <p className="hero-signature">{hero.signature}</p>
 
               <div className="hero-actions">
                 <ButtonLink href={profile.linkedin} target="_blank" rel="noreferrer">
@@ -33,6 +31,19 @@ export default function HeroSection() {
                 </ButtonLink>
               </div>
             </div>
+
+            <aside className="hero-portrait-shell" aria-label={hero.portraitLabel}>
+              <div className="hero-portrait-frame">
+                <img
+                  className="hero-portrait-image"
+                  src="/images/yure-profile.jpg"
+                  alt={hero.portraitAlt}
+                  loading="eager"
+                  decoding="async"
+                />
+                <div className="hero-portrait-scan" aria-hidden="true" />
+              </div>
+            </aside>
           </div>
 
           <div className="hero-watermark" aria-hidden="true">

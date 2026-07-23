@@ -126,16 +126,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="contact-links">
-              <ButtonLink
-                href={profile.resume}
-                variant="secondary"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {contact.resume}
-              </ButtonLink>
-            </div>
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>

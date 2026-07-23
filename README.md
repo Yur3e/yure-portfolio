@@ -2,7 +2,7 @@
 
 Este projeto é o meu portfólio pessoal como desenvolvedor de software. Mais do que uma página para reunir links, eu quis construir uma experiência que mostrasse um pouco da minha forma de pensar: organização, cuidado visual, clareza na comunicação e uma base técnica simples de manter.
 
-A proposta foi criar um portfólio full stack com frontend em React e backend em Node.js, reunindo minha trajetória, tecnologias, projetos, currículo e um formulário de contato funcional.
+A proposta foi criar um portfólio full stack com frontend em React e backend em Node.js, reunindo minha trajetória, tecnologias, projetos e um formulário de contato funcional.
 
 ## O que eu quis demonstrar com este projeto
 

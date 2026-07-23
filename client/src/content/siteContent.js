@@ -9,7 +9,6 @@ export const siteContent = {
       email: "joseyure.sfernandes@gmail.com",
       linkedin: "https://www.linkedin.com/in/yurefernandes/",
       github: "https://github.com/Yur3e",
-      resume: "/docs/CV_FullStack_Yure_Fernandes.pdf"
     },
     intro: {
       loading: "Portfólio carregando",
@@ -24,8 +23,15 @@ export const siteContent = {
     },
     hero: {
       available: "Disponível para oportunidades",
+      titleLineOne: "Sistemas web claros,",
+      titleLineTwo: "dados bem usados.",
+      signature: "João Pessoa, PB · Ciência de Dados · Full-stack em evolução",
       lead:
-        "Interfaces com presença, lógica organizada e projetos onde visual e dados conversam de verdade.",
+        "Crio interfaces e sistemas onde visual, lógica e dados se conectam com intenção.",
+      portraitLabel: "Retrato profissional de José Yure",
+      portraitAlt: "José Yure em retrato pessoal",
+      portraitStatus: "Construindo com foco",
+      skillChips: ["React", "C#", "Dados"],
       linkedin: "LinkedIn",
       experienceButton: "Experiência"
     },
@@ -106,7 +112,7 @@ export const siteContent = {
       {
         title: "Portfólio Pessoal",
         description:
-          "Portfólio profissional desenvolvido com React, Vite, Node.js e Express, com conteúdo bilíngue, tema claro/escuro, currículo público e formulário de contato conectado ao backend.",
+          "Portfólio profissional desenvolvido com React, Vite, Node.js e Express, com conteúdo bilíngue, tema claro/escuro e formulário de contato conectado ao backend.",
         tech: ["React", "Vite", "Node.js", "Express", "Render"],
         demo: "#",
         repo: "https://github.com/Yur3e/portfolio-test"
@@ -194,7 +200,6 @@ export const siteContent = {
         "Estou disponível para oportunidades em desenvolvimento de software, com interesse em contribuir com projetos bem estruturados, aprender com times experientes e gerar valor com soluções consistentes.",
       contactButton: "Entrar em contato",
       github: "GitHub",
-      resume: "Currículo",
       name: "Nome",
       email: "E-mail",
       message: "Mensagem",
@@ -219,7 +224,6 @@ export const siteContent = {
       email: "joseyure.sfernandes@gmail.com",
       linkedin: "https://www.linkedin.com/in/yurefernandes/",
       github: "https://github.com/Yur3e",
-      resume: "/docs/CV_FullStack_Yure_Fernandes.pdf"
     },
     intro: {
       loading: "Loading portfolio",
@@ -234,8 +238,15 @@ export const siteContent = {
     },
     hero: {
       available: "Open to opportunities",
+      titleLineOne: "Clear web systems,",
+      titleLineTwo: "data put to work.",
+      signature: "João Pessoa, Brazil · Data Science · Full-stack in progress",
       lead:
-        "Interfaces with presence, organized logic, and projects where visuals and data genuinely reinforce each other.",
+        "I build interfaces and systems where visuals, logic, and data connect with intention.",
+      portraitLabel: "Professional portrait of José Yure",
+      portraitAlt: "José Yure in a personal portrait",
+      portraitStatus: "Building with focus",
+      skillChips: ["React", "C#", "Data"],
       linkedin: "LinkedIn",
       experienceButton: "Experience"
     },
@@ -316,7 +327,7 @@ export const siteContent = {
       {
         title: "Personal Portfolio",
         description:
-          "Professional portfolio built with React, Vite, Node.js, and Express, featuring bilingual content, light/dark theme, public resume, and a contact form connected to the backend.",
+          "Professional portfolio built with React, Vite, Node.js, and Express, featuring bilingual content, light/dark theme, and a contact form connected to the backend.",
         tech: ["React", "Vite", "Node.js", "Express", "Render"],
         demo: "#",
         repo: "https://github.com/Yur3e/portfolio-test"
@@ -404,7 +415,6 @@ export const siteContent = {
         "I am open to software development opportunities, with a strong interest in contributing to well-structured projects, learning from experienced teams, and delivering value through consistent solutions.",
       contactButton: "Get in touch",
       github: "GitHub",
-      resume: "Resume",
       name: "Name",
       email: "Email",
       message: "Message",
