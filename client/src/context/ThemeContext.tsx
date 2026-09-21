@@ -1,17 +1,25 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
-const ThemeContext = createContext(null);
+type Theme = "dark" | "light";
 
-const VALID_THEMES = new Set(["dark", "light"]);
+interface ThemeContextValue {
+  theme: Theme;
+  isDarkTheme: boolean;
+  toggleTheme: () => void;
+}
 
-export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
+const ThemeContext = createContext<ThemeContextValue | null>(null);
+
+const VALID_THEMES = new Set<string>(["dark", "light"]);
+
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === "undefined") {
       return "dark";
     }
 
     const storedTheme = window.localStorage.getItem("portfolio-theme");
-    return VALID_THEMES.has(storedTheme) ? storedTheme : "dark";
+    return VALID_THEMES.has(storedTheme ?? "") ? (storedTheme as Theme) : "dark";
   });
 
   useEffect(() => {
@@ -23,7 +31,7 @@ export function ThemeProvider({ children }) {
     setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
   }
 
-  const value = useMemo(
+  const value = useMemo<ThemeContextValue>(
     () => ({
       theme,
       isDarkTheme: theme === "dark",
@@ -35,7 +43,7 @@ export function ThemeProvider({ children }) {
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
-export function useTheme() {
+export function useTheme(): ThemeContextValue {
   const context = useContext(ThemeContext);
 
   if (!context) {
@@ -44,3 +52,4 @@ export function useTheme() {
 
   return context;
 }
+

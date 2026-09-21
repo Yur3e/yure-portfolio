@@ -1,6 +1,12 @@
 import { useLanguage } from "../../context/LanguageContext";
+import type { ProjectItem } from "../../types/portfolio";
 
-export default function ProjectCard({ project, index = 0 }) {
+interface ProjectCardProps {
+  project: ProjectItem;
+  index?: number;
+}
+
+export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const { content } = useLanguage();
   const { projectsSection } = content;
   const projectIndex = String(index + 1).padStart(2, "0");

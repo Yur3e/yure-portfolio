@@ -1,4 +1,4 @@
-export function removeUrlHash() {
+export function removeUrlHash(): void {
   if (typeof window === "undefined" || !window.location.hash) {
     return;
   }
@@ -10,7 +10,7 @@ export function removeUrlHash() {
   );
 }
 
-export function scrollToSection(hash) {
+export function scrollToSection(hash: string): boolean {
   if (!hash?.startsWith("#")) {
     return false;
   }
@@ -26,3 +26,4 @@ export function scrollToSection(hash) {
 
   return false;
 }
+

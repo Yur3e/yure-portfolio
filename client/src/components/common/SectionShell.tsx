@@ -1,5 +1,15 @@
 import Container from "../layout/Container";
 import SectionTitle from "./SectionTitle";
+import type { ReactNode } from "react";
+
+interface SectionShellProps {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description?: string;
+  children: ReactNode;
+  className?: string;
+}
 
 export default function SectionShell({
   id,
@@ -8,7 +18,7 @@ export default function SectionShell({
   description,
   children,
   className = ""
-}) {
+}: SectionShellProps) {
   return (
     <section id={id} className={`content-section ${className}`.trim()}>
       <Container>

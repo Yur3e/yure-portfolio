@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import ButtonLink from "../components/common/ButtonLink";
 import Container from "../components/layout/Container";
 import { useLanguage } from "../context/LanguageContext";
@@ -7,11 +7,15 @@ const API_BASE_URL = import.meta.env.VITE_API_URL?.replace(/\/$/, "") || "";
 const API_URL = `${API_BASE_URL}/api/contact`;
 const REQUEST_TIMEOUT_MS = 20000;
 
-async function readResponseBody(response) {
+interface ContactResponse {
+  message?: string;
+}
+
+async function readResponseBody(response: Response): Promise<ContactResponse> {
   const contentType = response.headers.get("content-type") || "";
 
   if (contentType.includes("application/json")) {
-    return response.json();
+    return response.json() as Promise<ContactResponse>;
   }
 
   return {
@@ -31,12 +35,12 @@ export default function ContactSection() {
   const [status, setStatus] = useState({ type: "", text: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleChange(event) {
+  function handleChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = event.target;
     setFormData((current) => ({ ...current, [name]: value }));
   }
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsSubmitting(true);
     setStatus({ type: "", text: "" });
@@ -59,7 +63,7 @@ export default function ContactSection() {
         throw new Error(data.message || contact.sendError);
       }
 
-      setStatus({ type: "success", text: data.message });
+      setStatus({ type: "success", text: data.message ?? contact.genericError });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Contact form request failed:", error);
@@ -71,7 +75,9 @@ export default function ContactSection() {
         text:
           isTimeout || error instanceof TypeError
             ? contact.connectionError
-            : error.message || contact.genericError
+            : error instanceof Error && error.message
+              ? error.message
+              : contact.genericError
       });
     } finally {
       window.clearTimeout(timeoutId);
@@ -84,7 +90,6 @@ export default function ContactSection() {
       <div className="contact-terminal-shell">
         <Container>
           <div className="contact-terminal-copy">
-            <span className="contact-terminal-kicker">{contact.kicker}</span>
             <h2 className="contact-terminal-title">
               <span>{contact.titleLineOne}</span>
               <span className="contact-terminal-accent">{contact.titleLineTwo}</span>
@@ -93,6 +98,9 @@ export default function ContactSection() {
 
             <div className="contact-links contact-links-terminal">
               <ButtonLink href={`mailto:${profile.email}`}>{contact.contactButton}</ButtonLink>
+              <ButtonLink href={profile.whatsappUrl} variant="secondary" target="_blank" rel="noreferrer">
+                {contact.whatsappButton}
+              </ButtonLink>
               <ButtonLink href={profile.github} variant="secondary" target="_blank" rel="noreferrer">
                 {contact.github}
               </ButtonLink>
@@ -116,16 +124,38 @@ export default function ContactSection() {
               </div>
 
               <div className="contact-detail-item">
-                <span>{contact.github}</span>
-                <strong>@Yur3e</strong>
+                <span>WhatsApp / Telefone</span>
+                <strong>
+                  <a
+                    href={profile.whatsappUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ color: "var(--accent)", textDecoration: "none" }}
+                  >
+                    {profile.phone}
+                  </a>
+                </strong>
               </div>
 
               <div className="contact-detail-item">
-                <span>location</span>
+                <span>{contact.github}</span>
+                <strong>
+                  <a
+                    href={profile.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ color: "var(--text)", textDecoration: "none" }}
+                  >
+                    @Yur3e
+                  </a>
+                </strong>
+              </div>
+
+              <div className="contact-detail-item">
+                <span>Localização</span>
                 <strong>{profile.location}</strong>
               </div>
             </div>
-
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
@@ -155,7 +185,7 @@ export default function ContactSection() {
               {contact.message}
               <textarea
                 name="message"
-                rows="5"
+                rows={5}
                 value={formData.message}
                 onChange={handleChange}
                 placeholder={contact.messagePlaceholder}

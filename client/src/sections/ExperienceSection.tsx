@@ -3,7 +3,7 @@ import { useLanguage } from "../context/LanguageContext";
 
 export default function ExperienceSection() {
   const { content } = useLanguage();
-  const { experienceSection, experience } = content;
+  const { experienceSection, experience, credentialsSection } = content;
 
   return (
     <SectionShell
@@ -13,7 +13,7 @@ export default function ExperienceSection() {
       description={experienceSection.description}
     >
       <div className="experience-timeline">
-        {experience.map((item, index) => (
+        {experience.map((item) => (
           <article key={`${item.title}-${item.company}`} className="experience-entry">
             <div className="experience-entry-rail" aria-hidden="true">
               <span className="experience-entry-dot" />
@@ -24,13 +24,8 @@ export default function ExperienceSection() {
               <strong>{item.company}</strong>
             </div>
 
-            <div className="experience-card">
-              <div className="experience-card-topline">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{item.duration}</strong>
-              </div>
-
-              <div className="experience-header">
+              <div className="experience-card">
+                <div className="experience-header">
                 <h3>{item.title}</h3>
                 <p className="experience-company">{item.employmentType}</p>
               </div>
@@ -43,7 +38,7 @@ export default function ExperienceSection() {
 
               {item.bullets.length ? (
                 <ul className="experience-bullets">
-                  {item.bullets.map((bullet) => (
+                  {item.bullets.slice(0, 2).map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
@@ -51,7 +46,7 @@ export default function ExperienceSection() {
 
               {item.tech.length ? (
                 <div className="experience-tech-list">
-                  {item.tech.map((tech) => (
+                  {item.tech.slice(0, 5).map((tech) => (
                     <span key={tech} className="experience-tech">
                       {tech}
                     </span>
@@ -62,6 +57,32 @@ export default function ExperienceSection() {
           </article>
         ))}
       </div>
+
+      {credentialsSection ? (
+        <div id="formacao" className="credentials-block">
+          <div className="credentials-topic">
+            <p className="section-eyebrow">// {credentialsSection.title}</p>
+            <h3>{credentialsSection.educationTitle}</h3>
+          </div>
+          <div className="credentials-grid">
+            <div className="credential-card">
+              <div className="credential-list">
+                {credentialsSection.education.map((edu) => (
+                  <div key={edu.degree} className="credential-item">
+                    <div className="credential-item-header">
+                      <strong>{edu.degree}</strong>
+                      <span className="credential-badge">{edu.badge}</span>
+                    </div>
+                    <p className="credential-institution">{edu.institution}</p>
+                    <span className="credential-status">{edu.status}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      ) : null}
     </SectionShell>
   );
 }

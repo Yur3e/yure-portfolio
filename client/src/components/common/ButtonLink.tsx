@@ -1,4 +1,13 @@
 import { scrollToSection } from "../../utils/scrollToSection";
+import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from "react";
+
+interface ButtonLinkProps {
+  href: string;
+  children: ReactNode;
+  variant?: "primary" | "secondary";
+  target?: AnchorHTMLAttributes<HTMLAnchorElement>["target"];
+  rel?: string;
+}
 
 export default function ButtonLink({
   href,
@@ -6,11 +15,11 @@ export default function ButtonLink({
   variant = "primary",
   target,
   rel
-}) {
+}: ButtonLinkProps) {
   const isSectionLink = href?.startsWith("#");
   const className = variant === "secondary" ? "button button-secondary" : "button";
 
-  function handleClick(event) {
+  function handleClick(event: MouseEvent<HTMLAnchorElement>) {
     if (!isSectionLink) {
       return;
     }

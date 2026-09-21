@@ -1,71 +1,86 @@
-# Portfólio Profissional - José Yure
+# Yure Fernandes - Portfólio Profissional
 
-Este projeto é o meu portfólio pessoal como desenvolvedor de software. Mais do que uma página para reunir links, eu quis construir uma experiência que mostrasse um pouco da minha forma de pensar: organização, cuidado visual, clareza na comunicação e uma base técnica simples de manter.
+Portfólio full stack desenvolvido para apresentar experiências, formação, competências técnicas, projetos e canais de contato de Yure Fernandes.
 
-A proposta foi criar um portfólio full stack com frontend em React e backend em Node.js, reunindo minha trajetória, tecnologias, projetos e um formulário de contato funcional.
+## Destaques
 
-## O que eu quis demonstrar com este projeto
+- Interface responsiva em React e TypeScript.
+- Conteúdo em português e inglês.
+- Tema claro e escuro com preferência persistida no navegador.
+- Formulário de contato com validação e envio de e-mail.
+- API Express para desenvolvimento local e funções serverless na Vercel.
 
-Ao desenvolver este portfólio, meu objetivo foi mostrar que consigo ir além de uma página estática. Eu queria uma aplicação com estrutura real de projeto, separação entre frontend e backend, conteúdo bem organizado e um fluxo de contato funcionando de ponta a ponta.
+## Tecnologias
 
-Alguns pontos que trabalhei com mais intenção:
+| Camada | Tecnologias |
+| --- | --- |
+| Frontend | React, TypeScript, Vite, Tailwind CSS e CSS customizado |
+| Backend | Node.js, Express e Nodemailer |
+| Deploy | Vercel |
 
-- uma interface com identidade própria, responsiva e confortável de navegar;
-- conteúdo em português e inglês, pensando também em oportunidades fora do Brasil;
-- tema claro e escuro com preferência salva no navegador;
-- seções organizadas para apresentar perfil, stack, projetos, experiência e contato;
-- formulário conectado a uma API própria, com validação e envio de e-mail;
-- deploy na Vercel com frontend estático e API serverless no mesmo domínio.
+## Estrutura
 
-## Visão geral
+```text
+api/        # Funções serverless da Vercel
+client/     # Aplicação React/Vite
+server/     # API Express para desenvolvimento local
+```
 
-O projeto está dividido em duas partes principais:
+## Executando localmente
 
-- `client/`: aplicação React criada com Vite;
-- `server/`: API em Node.js com Express.
+Pré-requisitos: Node.js 18+ e npm 9+.
 
-No ambiente de produção, a Vercel publica o frontend gerado pelo Vite e executa a rota de contato como função serverless em `/api/contact`. Isso mantém o site e a API no mesmo domínio, sem precisar manter um servidor Express rodando continuamente.
+```bash
+npm install
+npm --prefix client install
+npm --prefix server install
+```
 
-## Principais funcionalidades
+Inicie o frontend e a API em terminais separados:
 
-- Página inicial com apresentação profissional e links de contato.
-- Seção "Sobre mim" com resumo da minha formação e foco atual.
-- Lista de tecnologias separadas por área: backend, dados, banco de dados, frontend e ferramentas.
-- Projetos em destaque, incluindo este portfólio e projetos orientados a dados.
-- Linha de experiência profissional e acadêmica.
-- Alternância entre português e inglês.
-- Alternância entre tema claro e escuro.
-- Formulário de contato integrado ao backend.
-- Envio de e-mail com Nodemailer.
-- Validação básica dos dados enviados pelo formulário.
-- Tratamento de erros na API.
+```bash
+# Frontend: http://localhost:5173
+npm --prefix client run dev
+```
 
-## Tecnologias utilizadas
+```bash
+# API: http://localhost:3001
+npm --prefix server run dev
+```
 
-**Frontend**
+## Variáveis de ambiente
 
-- React
-- Vite
-- JavaScript
-- CSS
+Crie `server/.env` para configurar o envio de e-mail:
 
-**Backend**
+```env
+PORT=3001
+EMAIL_HOST=smtp.exemplo.com
+EMAIL_PORT=587
+EMAIL_SECURE=false
+EMAIL_USER=seu-usuario
+EMAIL_PASS=sua-senha-ou-token
+EMAIL_FROM=seuemail@exemplo.com
+EMAIL_TO=destinatario@exemplo.com
+```
 
-- Node.js
-- Express
-- Nodemailer
-- CORS
+No deploy, configure as mesmas variáveis no painel da Vercel. Não versione arquivos `.env`.
 
-**Deploy e organização**
+## Validação
 
-- Vercel
-- Git e GitHub
-- Estrutura full stack com `client` e `server`
+```bash
+npm --prefix client run typecheck
+npm --prefix client run build
+```
 
-## Decisões técnicas
+## API
 
-Uma das escolhas principais foi manter o conteúdo do site separado da estrutura visual. Os textos, projetos, experiências e informações do perfil ficam organizados em arquivos próprios, o que facilita atualizar o portfólio sem precisar mexer diretamente na lógica dos componentes.
+| Método | Rota | Descrição |
+| --- | --- | --- |
+| `POST` | `/api/contact` | Processa a mensagem enviada pelo formulário. |
+| `GET` | `/api/health` | Verifica a disponibilidade da API. |
 
-Também optei por criar o formulário de contato com uma API própria, em vez de usar apenas um link externo. Isso me permitiu trabalhar validação, tratamento de erro, configuração de variáveis de ambiente e envio de e-mail no backend.
+## Contato
 
-No deploy, escolhi um formato em que a Vercel serve o frontend estático gerado pelo Vite e usa uma função serverless para o envio de contato. O backend Express continua disponível para desenvolvimento local, mas a produção fica mais adequada ao modelo da Vercel.
+- [LinkedIn](https://www.linkedin.com/in/yurefernandes/)
+- [GitHub](https://github.com/Yur3e)
+- [E-mail](mailto:joseyure.sfernandes@gmail.com)

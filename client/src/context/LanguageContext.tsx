@@ -1,10 +1,17 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { siteContent } from "../content/siteContent";
+import type { SiteContent, SupportedLanguage } from "../types/portfolio";
 
-const LanguageContext = createContext(null);
+interface LanguageContextValue {
+  language: SupportedLanguage;
+  setLanguage: (lang: SupportedLanguage) => void;
+  content: SiteContent;
+}
 
-export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState("pt");
+const LanguageContext = createContext<LanguageContextValue | null>(null);
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [language, setLanguage] = useState<SupportedLanguage>("pt");
 
   useEffect(() => {
     const stored = window.localStorage.getItem("portfolio-language");
@@ -14,12 +21,12 @@ export function LanguageProvider({ children }) {
     }
   }, []);
 
-  function handleSetLanguage(nextLanguage) {
+  function handleSetLanguage(nextLanguage: SupportedLanguage) {
     setLanguage(nextLanguage);
     window.localStorage.setItem("portfolio-language", nextLanguage);
   }
 
-  const value = useMemo(
+  const value = useMemo<LanguageContextValue>(
     () => ({
       language,
       setLanguage: handleSetLanguage,
@@ -31,7 +38,7 @@ export function LanguageProvider({ children }) {
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
-export function useLanguage() {
+export function useLanguage(): LanguageContextValue {
   const context = useContext(LanguageContext);
 
   if (!context) {
@@ -40,3 +47,4 @@ export function useLanguage() {
 
   return context;
 }
+
