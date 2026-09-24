@@ -77,12 +77,12 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
         repo: "https://github.com/Yur3e/portfolio-test"
       },
       {
-        title: "Bilhetrometro",
+        title: "Visite Jampa",
         description:
-          "Aplicação analítica orientada a dados para coleta, processamento e visualização interativa de métricas de mobilidade e tarifas. Desenvolvido com Python, Pandas, NumPy, Streamlit e Altair para transformar dados brutos em decisões visuais.",
-        tech: ["Python", "Pandas", "NumPy", "Streamlit", "Altair", "Data Analysis"],
-        demo: "#",
-        repo: "https://github.com/Yur3e/bilhetrometro"
+          "Site turístico dedicado a João Pessoa, reunindo informações e experiências para ajudar visitantes a conhecer os principais atrativos da cidade.",
+        tech: ["HTML5", "CSS3", "JavaScript"],
+        demo: "https://yur3e.github.io/visite-jampa/",
+        repo: "https://github.com/Yur3e/visite-jampa"
       }
     ],
     experienceSection: {
@@ -267,12 +267,12 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
         repo: "https://github.com/Yur3e/portfolio-test"
       },
       {
-        title: "Bilhetrometro",
+        title: "Visite Jampa",
         description:
-          "A data-oriented analytics application designed to collect, process, and interactively visualize transit and fare metrics using Python, Pandas, NumPy, Streamlit, and Altair to turn raw numbers into clear actionable insights.",
-        tech: ["Python", "Pandas", "NumPy", "Streamlit", "Altair", "Data Analysis"],
-        demo: "#",
-        repo: "https://github.com/Yur3e/bilhetrometro"
+          "A tourism website dedicated to João Pessoa, bringing together information and experiences to help visitors discover the city's main attractions.",
+        tech: ["HTML5", "CSS3", "JavaScript"],
+        demo: "https://yur3e.github.io/visite-jampa/",
+        repo: "https://github.com/Yur3e/visite-jampa"
       }
     ],
     experienceSection: {
