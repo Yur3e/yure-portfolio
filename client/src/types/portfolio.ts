@@ -46,6 +46,7 @@ export interface StacksContent {
 
 export interface ProjectItem {
   title: string;
+  logo: string;
   description: string;
   tech: string[];
   demo: string;

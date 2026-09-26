@@ -89,6 +89,8 @@ html[data-theme="light"] .site-brand-logo-light { opacity: 1; }
 .tech-node-list span, .project-tech, .experience-tech { padding: 5px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--text); font-size: .75rem; }
 .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; border-top: 1px solid var(--line); }
 .project-card { display: flex; flex-direction: column; gap: 14px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.project-heading { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.project-logo { display: block; flex: 0 0 96px; width: 96px; height: 72px; object-fit: contain; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 .project-card-topline, .experience-card-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .project-index, .experience-card-topline span { color: var(--accent); font-size: .78rem; font-weight: 600; }
 .project-card-label, .experience-entry-meta span { color: var(--muted-soft); font-size: .75rem; }

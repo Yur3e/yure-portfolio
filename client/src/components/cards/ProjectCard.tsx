@@ -20,7 +20,10 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         <span className="project-card-label">{projectsSection.itemLabel}</span>
       </div>
 
-      <h3>{project.title}</h3>
+      <div className="project-heading">
+        <img className="project-logo" src={project.logo} alt="" width={96} height={72} loading="lazy" decoding="async" />
+        <h3>{project.title}</h3>
+      </div>
       <p className="project-description">{project.description}</p>
 
       <div className="project-tags">

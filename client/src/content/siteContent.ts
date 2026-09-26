@@ -69,7 +69,17 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
     },
     projects: [
       {
+        title: "NexoDesk — Central de Atendimento",
+        logo: "/projects/logos/nexodesklogo.png",
+        description:
+          "Sistema full stack para gestão de chamados, com autenticação JWT, perfis de usuário e agente, prioridades e acompanhamento dos atendimentos. API em ASP.NET Core com arquitetura em camadas, testes unitários e execução via Docker.",
+        tech: ["C#", "ASP.NET Core", "React", "TypeScript", "SQL Server", "Docker"],
+        demo: "",
+        repo: "https://github.com/Yur3e/intern-api"
+      },
+      {
         title: "Portfólio Profissional Full-Stack",
+        logo: "/brand/yure-logo.png",
         description:
           "Aplicação web full-stack desenvolvida com React, Vite, Node.js e Express. Conta com rotas de health-check, formulário de contato integrado via Nodemailer, internacionalização bilíngue (PT/EN), temas claro/escuro e arquitetura modular de alta manutenibilidade.",
         tech: ["React", "Vite", "Node.js", "Express", "Nodemailer", "CSS Moderno"],
@@ -78,6 +88,7 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
       },
       {
         title: "Visite Jampa",
+        logo: "/projects/logos/visitejampalogo.png",
         description:
           "Site turístico dedicado a João Pessoa, reunindo informações e experiências para ajudar visitantes a conhecer os principais atrativos da cidade.",
         tech: ["HTML5", "CSS3", "JavaScript"],
@@ -259,7 +270,17 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
     },
     projects: [
       {
+        title: "NexoDesk — Help Desk",
+        logo: "/projects/logos/nexodesklogo.png",
+        description:
+          "Full-stack ticket management system with JWT authentication, user and agent roles, priorities, and support tracking. Built with an ASP.NET Core API, layered architecture, unit tests, and Docker support.",
+        tech: ["C#", "ASP.NET Core", "React", "TypeScript", "SQL Server", "Docker"],
+        demo: "",
+        repo: "https://github.com/Yur3e/intern-api"
+      },
+      {
         title: "Full-Stack Professional Portfolio",
+        logo: "/brand/yure-logo.png",
         description:
           "Full-stack web application built with React, Vite, Node.js, and Express. Includes health-check endpoints, Nodemailer-powered contact forms, bilingual i18n (PT/EN), dark/light themes, and a maintainable modular architecture.",
         tech: ["React", "Vite", "Node.js", "Express", "Nodemailer", "Modern CSS"],
@@ -268,6 +289,7 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
       },
       {
         title: "Visite Jampa",
+        logo: "/projects/logos/visitejampalogo.png",
         description:
           "A tourism website dedicated to João Pessoa, bringing together information and experiences to help visitors discover the city's main attractions.",
         tech: ["HTML5", "CSS3", "JavaScript"],
