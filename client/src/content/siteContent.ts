@@ -6,7 +6,7 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
       name: "José Yure da Silva Fernandes",
       title: "Desenvolvedor de Software | ADS & Ciência de Dados",
       subtitle:
-        "Graduado em Análise e Desenvolvimento de Sistemas (UNIESP) e Ciência de Dados (UEPB). Experiência em backend, APIs REST, C#, .NET, Python, SQL e arquitetura limpa.",
+        "Graduado em Análise e Desenvolvimento de Sistemas (UNIESP) e Ciência de Dados (UEPB). Experiência em backend, APIs REST, JavaScript, TypeScript, C#, .NET, Python, SQL e arquitetura limpa.",
       location: "João Pessoa, PB, Brasil",
       phone: "(83) 98692-5046",
       whatsappUrl: "https://wa.me/5583986925046",
@@ -23,7 +23,7 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
       titleLineOne: "Yure",
       titleLineTwo: "Fernandes",
       lead:
-        "Graduado em Análise e Desenvolvimento de Sistemas e Ciência de Dados. Atuo na construção e manutenção de sistemas web, APIs REST e soluções orientadas a dados com C#, .NET, Python, SQL e foco em Clean Code.",
+        "Desenvolvo sistemas web e APIs com JavaScript, TypeScript, C#, .NET, Python e SQL. Com formação em Desenvolvimento de Sistemas e Ciência de Dados, alio a construção de software à análise de dados para resolver problemas do dia a dia.",
       projectsButton: "Ver Projetos",
       experienceButton: "Trajetória"
     },
@@ -207,7 +207,7 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
       name: "José Yure da Silva Fernandes",
       title: "Software Developer | Systems Analysis & Data Science",
       subtitle:
-        "Graduated in Systems Analysis & Development (UNIESP) and Data Science (UEPB). Hands-on experience in backend development, REST APIs, C#, .NET, Python, SQL, and clean architecture.",
+        "Graduated in Systems Analysis & Development (UNIESP) and Data Science (UEPB). Hands-on experience in backend development, REST APIs, JavaScript, TypeScript, C#, .NET, Python, SQL, and clean architecture.",
       location: "João Pessoa, PB, Brazil",
       phone: "+55 (83) 98692-5046",
       whatsappUrl: "https://wa.me/5583986925046",
@@ -224,7 +224,7 @@ export const siteContent: Record<SupportedLanguage, SiteContent> = {
       titleLineOne: "Yure",
       titleLineTwo: "Fernandes",
       lead:
-        "Graduated in Systems Analysis and Development and Data Science. I build and maintain web systems, REST APIs, and data-driven solutions using C#, .NET, Python, SQL, and Clean Code principles.",
+        "I develop web systems and APIs with JavaScript, TypeScript, C#, .NET, Python, and SQL. With a background in Systems Development and Data Science, I combine software development and data analysis to solve everyday problems.",
       projectsButton: "View Projects",
       experienceButton: "Career Path"
     },
